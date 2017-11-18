@@ -63,7 +63,7 @@ uint16_t MCP3208::analogRead(uint8_t pin) {
 }
 
 int16_t MCP3208::analogReadDif(uint8_t pin) {
-    uint8_t diff;
+    uint16_t diff;// correcting size of variable to store the returned value. 
     uint8_t b1, b2;
     uint8_t addr = 0b01000000 | ((pin & 0b11) << 3);
     digitalWrite(_cs, LOW);
